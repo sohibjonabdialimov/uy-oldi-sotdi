@@ -5,6 +5,13 @@
   font-family: "Nunito", sans-serif;
   margin: 0;
 }
+/* text-#1F2937 text-[26px] sm:text-4xl sm:mb-12 mb-4 sm:font-semibold font-bold */
+.common_subtitle{
+  color: rgb(87, 87, 87);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
 /* clip-path: polygon(51% 1%, 100% 0%, 100% 100%, 41% 99%, 0% 50%); */
 .bg_img1 {
   background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 0.7)), url("./assets/q2.webp");
@@ -50,11 +57,13 @@ a.active {
   font-weight: bold;
 }
 .common_title {
-  font-size: 40px;
+  font-size: 35px;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 110px;
   margin-bottom: 80px;
-  color: #333;
+  font-weight: 700;
+  /* color: #389ABAFF; */
+  color: rgb(95, 95, 95);
 }
 .error_text {
   font-size: 14px;
@@ -398,7 +407,7 @@ a.active {
 .modal {
   display: none;
   position: fixed;
-  z-index: 50;
+  z-index: 100;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -953,6 +962,11 @@ a.active {
   }
 }
 @media (max-width: 600px) {
+  .common_subtitle{
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
   .hero_wrap{
     background-color: rgb(0, 0, 0, 0.6);
     margin-top: 50px;
@@ -994,10 +1008,9 @@ a.active {
     border-radius: 20px;
   }
   .common_title {
-    font-size: 28px;
-    margin-top: 30px;
+    font-size: 24px;
+    margin-top: 70px;
     margin-bottom: 50px;
-    color: #333;
   }
   .design_wrapper {
     display: grid;

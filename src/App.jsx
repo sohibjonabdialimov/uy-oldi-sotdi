@@ -1,4 +1,3 @@
-import Login from "./pages/login/Login";
 import List from "./pages/list/List";
 import ProductList from "./pages/productList/ProductList";
 import Single from "./pages/single/Single";
@@ -20,7 +19,6 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import NewCategory from "./pages/newCategory/NewCategory";
 import CategoryList from "./pages/categoryList/CategoryList";
-import AdminRegisterPage from "./pages/AdminRegisterPage";
 import { authContext } from "./services/providers/authContext";
 import AdminOrder from "./pages/AdminOrder";
 
@@ -31,20 +29,45 @@ function App() {
   };
   return (
     <>
-        <BrowserRouter>
-          <Routes>
-            <Route path="register" element={<RegisterPage />} />
-            <Route path="login" element={<LoginPage />} />
-            <Route path="/" element={<UsersLayout />}>
-              <Route index element={<Dashboard />} />
-              <Route path="design" element={<Design />} />
-              <Route path="contact" element={<Contact />} />
-              <Route path="feedback" element={<Feedback />} />
-              <Route path="category" element={<MainCategory />} />
-              <Route path="category/:id" element={<Furniture />} />
-            </Route>
-            <Route path="/admin">
-              <Route path="login" element={<Login />} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="register" element={<RegisterPage type="user" />} />
+          <Route path="login" element={<LoginPage type="user" />} />
+          <Route path="/" element={<UsersLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="design" element={<Design />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="feedback" element={<Feedback />} />
+            <Route path="category" element={<MainCategory />} />
+            <Route path="category/:id" element={<Furniture />} />
+          </Route>
+          <Route path="/admin">
+            <Route path="login" element={<LoginPage type="admin" />} />
+            <Route
+              index
+              element={
+                <RequireAuth>
+                  <List />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="messages"
+              element={
+                <RequireAuth>
+                  <Messages />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="all_orders"
+              element={
+                <RequireAuth>
+                  <AdminOrder />
+                </RequireAuth>
+              }
+            />
+            <Route path="users">
               <Route
                 index
                 element={
@@ -54,97 +77,72 @@ function App() {
                 }
               />
               <Route
-                path="messages"
+                path=":userId"
                 element={
                   <RequireAuth>
-                    <Messages />
+                    <Single />
                   </RequireAuth>
                 }
               />
               <Route
-                path="all_orders"
+                path="add"
                 element={
                   <RequireAuth>
-                    <AdminOrder />
+                    <RegisterPage type="admin" />
                   </RequireAuth>
                 }
               />
-              <Route path="users">
-                <Route
-                  index
-                  element={
-                    <RequireAuth>
-                      <List />
-                    </RequireAuth>
-                  }
-                />
-                <Route
-                  path=":userId"
-                  element={
-                    <RequireAuth>
-                      <Single />
-                    </RequireAuth>
-                  }
-                />
-                <Route
-                  path="add"
-                  element={
-                    <RequireAuth>
-                      <AdminRegisterPage />
-                    </RequireAuth>
-                  }
-                />
-              </Route>
-              <Route path="products">
-                <Route
-                  index
-                  element={
-                    <RequireAuth>
-                      <ProductList />
-                    </RequireAuth>
-                  }
-                />
-                <Route
-                  path=":productId"
-                  element={
-                    <RequireAuth>
-                      <Single />
-                    </RequireAuth>
-                  }
-                />
-                <Route
-                  path="new"
-                  element={
-                    <RequireAuth>
-                      <New
-                        inputs={productInputs}
-                        title="Yangi mahsulot qo'shish"
-                      />
-                    </RequireAuth>
-                  }
-                />
-              </Route>
-              <Route path="categories">
-                <Route
-                  index
-                  element={
-                    <RequireAuth>
-                      <CategoryList />
-                    </RequireAuth>
-                  }
-                />
-                <Route
-                  path="new"
-                  element={
-                    <RequireAuth>
-                      <NewCategory title="Yangi kategoriya qo'shish" />
-                    </RequireAuth>
-                  }
-                />
-              </Route>
             </Route>
-          </Routes>
-        </BrowserRouter>
+            <Route path="products">
+              <Route
+                index
+                element={
+                  <RequireAuth>
+                    <ProductList />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path=":productId"
+                element={
+                  <RequireAuth>
+                    <Single />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="new"
+                element={
+                  <RequireAuth>
+                    <New
+                      inputs={productInputs}
+                      title="Yangi mahsulot qo'shish"
+                    />
+                  </RequireAuth>
+                }
+              />
+            </Route>
+            <Route path="categories">
+              <Route
+                index
+                element={
+                  <RequireAuth>
+                    <CategoryList />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="new"
+                element={
+                  <RequireAuth>
+                    <NewCategory title="Yangi kategoriya qo'shish" />
+                  </RequireAuth>
+                }
+              />
+            </Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

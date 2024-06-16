@@ -6,9 +6,9 @@ const AdminOrder = () => {
   const [data, setData] = useState([]);
 
   function fetchProducts() {
-    axiosT.get("/admin/getUserMessage").then((response) => {
-      setData(response.data.msg);
-      console.log(response.data);
+    axiosT.get("/admin/getAllMessage").then((response) => {
+      setData(response.data.data);
+      console.log(response.data.data);
     });
   }
   useEffect(() => {
@@ -54,16 +54,16 @@ const AdminOrder = () => {
                   </div>
                   <div className="info">
                     <h2>
-                      <b>Ism:</b> {item.customer_name}
+                      <b>Ism:</b> {item.ism}
                     </h2>
                     <p>
-                      <b>Tel raqami:</b> {item.customer_phone}
+                      <b>Tel raqami:</b> {item.telefon}
                     </p>
                     <p>
-                      <b>Manzili:</b> {item.message}
+                      <b>Ko'p qavatli uy nomi:</b> {item.flatCategory.categoryName}
                     </p>
                     <p>
-                      <b>Mahsulot ID si:</b> {item.product_id}
+                      <b>Ko'p qavatli uy ID si:</b> {item.flatCategory_id}
                     </p>
                     <p>
                       <b>Buyurtma beruvchi ID si:</b> {item.user_id}

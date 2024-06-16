@@ -1,17 +1,20 @@
 import React from "react";
-import Carousel from "../components/Carousel";
 import Location from "../components/Location";
 import Information from "../components/Information";
 import AutoSlider from "../components/AutoSlider";
+import Hero from "../components/hero/Hero";
+import CategorySlider from "./CategorySlider";
+import ch2 from "../assets/ch2.jpg";
 
 const Dashboard = () => {
   return (
     <>
-      <Carousel />
-      
-      <div className="container text-black">
-        
-        <AutoSlider />
+      <Hero />
+      <div className="container text-black mx-auto">
+        <CategorySlider />
+        <div className="p-8">
+          <img src={ch2} alt="" />
+        </div>
         <Information />
         <Location />
       </div>

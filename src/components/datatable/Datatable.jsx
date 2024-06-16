@@ -23,35 +23,35 @@ const Datatable = () => {
     fetchProducts();
   }, []);
 
-  const handleDelete = async (id) => {
-    axiosT.delete(`/adminDelete/${id}`).then((response) => {
-      console.log(response);
-      toast.info("Admin o'chirildi", {
-        position: "top-right",
-      });
-      fetchProducts();
-    });
-  };
+  // const handleDelete = async (id) => {
+  //   axiosT.delete(`/adminDelete/${id}`).then((response) => {
+  //     console.log(response);
+  //     toast.info("Admin o'chirildi", {
+  //       position: "top-right",
+  //     });
+  //     fetchProducts();
+  //   });
+  // };
 
-  const actionColumn = [
-    {
-      field: "action",
-      headerName: "Action",
-      width: 200,
-      renderCell: (params) => {
-        return (
-          <div className="cellAction">
-            <div
-              className="deleteButton"
-              onClick={() => handleDelete(params.row.id)}
-            >
-              Delete
-            </div>
-          </div>
-        );
-      },
-    },
-  ];
+  // const actionColumn = [
+  //   {
+  //     field: "action",
+  //     headerName: "Action",
+  //     width: 200,
+  //     renderCell: (params) => {
+  //       return (
+  //         <div className="cellAction">
+  //           <div
+  //             className="deleteButton"
+  //             onClick={() => handleDelete(params.row.id)}
+  //           >
+  //             Delete
+  //           </div>
+  //         </div>
+  //       );
+  //     },
+  //   },
+  // ];
   return (
     <div className="datatable">
       <div className="datatableTitle">
@@ -63,7 +63,7 @@ const Datatable = () => {
       <DataGrid
         className="datagrid"
         rows={data}
-        columns={userColumns?.concat(actionColumn)}
+        columns={userColumns}
         pageSize={10}
         rowsPerPageOptions={[9]}
       />

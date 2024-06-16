@@ -6,12 +6,12 @@ import ScrollToTop from "../components/ui/Scroll";
 
 const UsersLayout = () => {
   return (
-    <>
+    <div className="mx-auto">
       <Header />
       <Outlet />
       <Footer />
       <ScrollToTop />
-    </>
+    </div>
   );
 };
 

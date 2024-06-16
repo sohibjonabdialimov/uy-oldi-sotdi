@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
-import { Link, NavLink } from "react-router-dom";
-import uy from "../../assets/uy.jpg"
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./header.css";
 const Header = () => {
   const hidden = useRef();
+  const navigate = useNavigate();
   function openNavbarFunction() {
     hidden.current?.classList.remove("hidden");
   }
@@ -173,12 +173,19 @@ const Header = () => {
       </header> */}
       <header id="site-header">
         <div id="site-header-container">
-          <div id="site-header-logo">
+          <div
+            onClick={() => {
+              navigate("/");
+            }}
+            id="site-header-logo"
+            className="cursor-pointer"
+          >
             <img
-            className="rounded-full"
+              className="rounded-full"
               src="https://bcassetcdn.com/public/blog/wp-content/uploads/2023/07/28140224/Urban-City-Apartment-by-marcololstudio.png"
               alt=""
-            /><p>E-ko'chmas mulk</p>
+            />
+            <p>E-ko'chmas mulk</p>
           </div>
 
           <input
@@ -203,13 +210,13 @@ const Header = () => {
                   <Link to={"/"}>Bosh sahifa</Link>
                 </li>
                 <li className="main-menu-item">
-                  <Link to={"/"}>About</Link>
+                  <Link to={"/category"}>Kategoriya</Link>
                 </li>
                 <li className="main-menu-item">
-                  <Link to={"/"}>Catalogue</Link>
+                  <Link to={"/contact"}>Catalogue</Link>
                 </li>
                 <li className="main-menu-item">
-                  <Link to={"/about"}>Delivery</Link>
+                  <Link to={"/design"}>Namunalar</Link>
                 </li>
               </ul>
             </nav>
@@ -264,7 +271,62 @@ const Header = () => {
           </div>
 
           <div id="site-header-auth-container">
-            <button
+            {JSON.parse(localStorage.getItem("user_id")) ? (
+              <button
+                onClick={() => {
+                  navigate("/login");
+                  localStorage.removeItem("user_id");
+                  localStorage.removeItem("user_data");
+                }}
+                id="site-header-login-button"
+                className="site-header-auth-button"
+              >
+                <i className="icon-logout">
+                  <img
+                    className="icon-header"
+                    src="https://img.icons8.com/ios-filled/18/666666/login-rounded-right.png"
+                  />
+                </i>
+                <span>Chiqish</span>
+              </button>
+            ) : (
+              <>
+                <button
+                  onClick={() => {
+                    navigate("/login");
+                  }}
+                  id="site-header-login-button"
+                  className="site-header-auth-button"
+                >
+                  <i className="icon-logout">
+                    <img
+                      className="icon-header"
+                      src="https://img.icons8.com/ios-filled/18/666666/login-rounded-right.png"
+                    />
+                  </i>
+                  <span>Kirish</span>
+                </button>
+                <button
+                  onClick={() => {
+                    navigate("/register");
+                  }}
+                  id="site-header-registration-button"
+                  className="site-header-auth-button"
+                >
+                  <i className="icon-user">
+                    <img
+                      className="icon-header"
+                      src="https://img.icons8.com/ios-glyphs/18/666666/user--v1.png"
+                    />
+                  </i>
+                  <span>Ro'yxatdan o'tish</span>
+                </button>
+              </>
+            )}
+            {/* <button
+              onClick={() => {
+                navigate("/login");
+              }}
               id="site-header-login-button"
               className="site-header-auth-button"
             >
@@ -277,6 +339,9 @@ const Header = () => {
               <span>Kirish</span>
             </button>
             <button
+              onClick={() => {
+                navigate("/register");
+              }}
               id="site-header-registration-button"
               className="site-header-auth-button"
             >
@@ -287,22 +352,10 @@ const Header = () => {
                 />
               </i>
               <span>Ro'yxatdan o'tish</span>
-            </button>
+            </button> */}
           </div>
         </div>
       </header>
-
-      <section id="main-container">
-        <div>
-          <h2>Ko’p qavatli uylani loyihalash bosqichlari</h2>
-          <p>Binoning joylashishini aniqlash, inshootlarni o’rab olish, infratuzilmani, binolarning joylashuvi va ichki qismini loyihalash, ko’p qavatli turar-joy binolarining fasadlarini loyihalashda sinfni tanlash muhimdir. Ko’p qavatli turar-joy binolarida va yaqin atrofda joylashgan hududlarda xavfsizlikni ta’minlash bir xil darajada muhimdir. Mikrorayondagi yangi binoning o‘rni va roli belgilab berildi. Uy mavjud rivojlanish, transport tarmoqlari va kommunal xizmatlar, infratuzilma (kasalxonalar, klinikalar, savdo tarmoqlari, ta’lim va maktabgacha ta’lim muassasalari) xususiyatlarini hisobga olgan holda joylashtirilishi kerak. Yuqori sifatli ko’p qavatli turar-joy binolarini loyihalash uchun vaziyatni to’g’ri baholash muhimdir.</p>
-        </div>
-        <img
-          src={uy}
-          alt="uy"
-        />
-        
-      </section>
     </>
   );
 };

@@ -223,67 +223,116 @@ const Footer = () => {
     </div>
   </div>
 </footer> */}
-<footer>
-    <div class="content">
-      <div class="top">
-        <div class="logo-details">
-          <i class="fab fa-slack"></i>
-          <span class="logo_name">CodingLab</span>
+      <footer>
+        <div className="content">
+          <div className="top">
+            <div className="logo-details">
+              <img
+                className="rounded-full"
+                src="https://bcassetcdn.com/public/blog/wp-content/uploads/2023/07/28140224/Urban-City-Apartment-by-marcololstudio.png"
+                alt=""
+              />
+              <p>E-ko'chmas mulk</p>
+            </div>
+            <div className="media-icons">
+              <a href="#">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+              <a href="#">
+                <i className="fab fa-twitter"></i>
+              </a>
+              <a href="#">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href="#">
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#">
+                <i className="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+          <div className="link-boxes">
+            <ul className="box">
+              <li className="link_name">Company</li>
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">Contact us</a>
+              </li>
+              <li>
+                <a href="#">About us</a>
+              </li>
+              <li>
+                <a href="#">Get started</a>
+              </li>
+            </ul>
+            <ul className="box">
+              <li className="link_name">Services</li>
+              <li>
+                <a href="#">App design</a>
+              </li>
+              <li>
+                <a href="#">Web design</a>
+              </li>
+              <li>
+                <a href="#">Logo design</a>
+              </li>
+              <li>
+                <a href="#">Banner design</a>
+              </li>
+            </ul>
+            <ul className="box">
+              <li className="link_name">Account</li>
+              <li>
+                <a href="#">Profile</a>
+              </li>
+              <li>
+                <a href="#">My account</a>
+              </li>
+              <li>
+                <a href="#">Prefrences</a>
+              </li>
+              <li>
+                <a href="#">Purchase</a>
+              </li>
+            </ul>
+            <ul className="box">
+              <li className="link_name">Courses</li>
+              <li>
+                <a href="#">HTML & CSS</a>
+              </li>
+              <li>
+                <a href="#">JavaScript</a>
+              </li>
+              <li>
+                <a href="#">Photography</a>
+              </li>
+              <li>
+                <a href="#">Photoshop</a>
+              </li>
+            </ul>
+            <ul className="box input-box">
+              <li className="link_name">Obuna bo'lish</li>
+              <li>
+                <input type="text" placeholder="Email kiriting" />
+              </li>
+              <li>
+                <input type="button" value="Bizga qo'shiling" />
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="media-icons">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
+        <div className="bottom-details">
+          <div className="bottom_text">
+            <p className="font-sans p-2 text-start md:text-center md:text-lg md:p-4 opacity-70 text-white">
+              {new Date().getFullYear()}-yil. Sayt mualliflik huquqi bilan
+              himoyalangan.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="link-boxes">
-        <ul class="box">
-          <li class="link_name">Company</li>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Contact us</a></li>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Get started</a></li>
-        </ul>
-        <ul class="box">
-          <li class="link_name">Services</li>
-          <li><a href="#">App design</a></li>
-          <li><a href="#">Web design</a></li>
-          <li><a href="#">Logo design</a></li>
-          <li><a href="#">Banner design</a></li>
-        </ul>
-        <ul class="box">
-          <li class="link_name">Account</li>
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">My account</a></li>
-          <li><a href="#">Prefrences</a></li>
-          <li><a href="#">Purchase</a></li>
-        </ul>
-        <ul class="box">
-          <li class="link_name">Courses</li>
-          <li><a href="#">HTML & CSS</a></li>
-          <li><a href="#">JavaScript</a></li>
-          <li><a href="#">Photography</a></li>
-          <li><a href="#">Photoshop</a></li>
-        </ul>
-        <ul class="box input-box">
-          <li class="link_name">Subscribe</li>
-          <li><input type="text" placeholder="Enter your email" /></li>
-          <li><input type="button" value="Subscribe" /></li>
-        </ul>
-      </div>
-    </div>
-    <div class="bottom-details">
-      <div class="bottom_text">
-        <span class="copyright_text">Copyright © 2021 <a href="#">CodingLab.</a>All rights reserved</span>
-        <span class="policy_terms">
-          <a href="#">Privacy policy</a>
-          <a href="#">Terms & condition</a>
-        </span>
-      </div>
-    </div>
-  </footer>
+      </footer>
     </>
   );
 };

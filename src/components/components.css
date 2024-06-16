@@ -1,0 +1,19 @@
+.home_design{
+  margin-left: 40px;
+}
+.home_design p{
+  position: relative;
+  margin-bottom: 15px;
+  font-size: 19px;
+  color: #575757FF;
+}
+.home_design p::before{
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: -25px;
+}

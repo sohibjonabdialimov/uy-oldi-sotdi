@@ -19,7 +19,7 @@ const Sidebar = () => {
     <div className="sidebar bg-slate-700">
       <div className="top">
         <Link to="/admin" style={{ textDecoration: "none" }}>
-          <span className="logo">Qurilish mollari</span>
+          <span className="logo">E-ko'chmas mulk</span>
         </Link>
       </div>
       <hr />

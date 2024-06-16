@@ -49,7 +49,7 @@ const New = ({ title }) => {
   };
 
   return (
-    <div className="new1">
+    <div className="new1 bg-white">
       <ToastContainer
         position="top-right"
         autoClose={4000}

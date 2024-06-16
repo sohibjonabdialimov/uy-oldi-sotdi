@@ -10,9 +10,9 @@ const ProductTable = () => {
   const [data, setData] = useState([]);
 
   function fetchProducts() {
-    axiosT.get("/user/getAllProducts").then((response) => {
-      console.log(response.data.allProducts);
-      setData(response.data.allProducts);
+    axiosT.get("/admin/getAllFlatItems").then((response) => {
+      console.log(response.data.data);
+      setData(response.data.data);
     });
   }
   useEffect(() => {

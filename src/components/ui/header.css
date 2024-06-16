@@ -10,28 +10,6 @@ html,
   font-family: sans-serif;
 }
 
-section#main-container {
-  background: #eeeeee;
-  width: 90%;
-  border-radius: 50px;
-  box-shadow: 9px 12px 40px -9px rgba(0, 0, 0, 0.75);
-  margin: 120px auto;
-  padding: 50px;
-  line-height: 1.68em;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-section#main-container img {
-  width: 60%;
-  border-radius: 20px;
-}
-
-section#main-container h3 {
-  margin-top: 60px;
-}
-
 /*header styling*/
 header#site-header {
   width: 100%;
@@ -399,23 +377,7 @@ input[type="checkbox"]#toggleSideMenu {
   header#site-header div#site-header-logo p {
     display: none;
   }
-  section#main-container {
-    width: 95%;
-    border-radius: 30px;
-    box-shadow: 9px 12px 40px -9px rgba(0, 0, 0, 0.75);
-    margin: 100px auto;
-    margin-bottom: 60px;
-    padding: 30px 20px;
-    display: flex;
-    align-items: center;
-    flex-direction: column-reverse;
-    gap: 40px;
-  }
-  section#main-container img {
-    width: 100%;
-    border-radius: 10px;
-  }
-  
+
   header#site-header div#site-header-auth-container .site-header-auth-button i::after {
     margin-right: 0;
   }
