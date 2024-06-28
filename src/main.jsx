@@ -11,6 +11,7 @@ import { MyOrderProvider } from "./services/providers/orderContext.jsx";
 import { FurnituresProvider } from "./services/providers/furnitures.jsx";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthProvider } from "./services/providers/authContext.jsx";
+import { MoneyProvider } from "./services/providers/money.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -19,7 +20,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <MyOrderProvider>
           <FurnituresProvider>
             <AuthProvider>
-              <App />
+              <MoneyProvider>
+                <App />
+              </MoneyProvider>
             </AuthProvider>
           </FurnituresProvider>
         </MyOrderProvider>

@@ -1,16 +1,16 @@
-import "./productTable.scss";
+import "./table.scss";
 import { DataGrid } from "@mui/x-data-grid";
-import { Product } from "../../datatablesource";
+import { Child } from "../../datatablesource";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { axiosT } from "../../services/api/axios";
 import { ToastContainer, toast } from "react-toastify";
 
-const ProductTable = () => {
+const ChildTable = () => {
   const [data, setData] = useState([]);
 
   function fetchProducts() {
-    axiosT.get("/admin/getAllFlatItems").then((response) => {
+    axiosT.get("/admin/getAllFlatChild").then((response) => {
       console.log(response.data.data);
       setData(response.data.data);
     });
@@ -20,9 +20,9 @@ const ProductTable = () => {
   }, []);
 
   const handleDelete = async (id) => {
-    axiosT.delete(`/admin/deleteFlatItemBy/${id}`).then((response) => {
+    axiosT.delete(`/admin/deleteFlatChildBy/${id}`).then((response) => {
       console.log(response);
-      toast.info("Xona bo'yicha ma'lumot o'chirildi", {
+      toast.info("Uy o'chirildi", {
         position: "top-right",
       });
       fetchProducts();
@@ -50,7 +50,7 @@ const ProductTable = () => {
   ];
   return (
     <div className="datatable">
-      <ToastContainer
+        <ToastContainer
         position="top-right"
         autoClose={4000}
         hideProgressBar={false}
@@ -63,15 +63,15 @@ const ProductTable = () => {
         theme="light"
       />
       <div className="datatableTitle">
-        Qurilish mollarini ro'yxati
-        <Link to="/admin/products/new" className="link">
-          Qo'shish
+       Uylarni qo'shish
+        <Link to="/admin/items/new" className="link">
+          Uy qo'shish
         </Link>
       </div>
       <DataGrid
         className="datagrid"
         rows={data}
-        columns={Product?.concat(actionColumn)}
+        columns={Child?.concat(actionColumn)}
         pageSize={10}
         rowsPerPageOptions={[9]}
       />
@@ -79,4 +79,4 @@ const ProductTable = () => {
   );
 };
 
-export default ProductTable;
+export default ChildTable;

@@ -1,28 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import t1 from "../assets/nam1.jpg";
+import t2 from "../assets/nam2.jpg";
+import t3 from "../assets/nam3.jpg";
+import t4 from "../assets/nam4.jpg";
+import t5 from "../assets/nam5.jpg";
+import t6 from "../assets/nam6.jpg";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
-import { axiosT } from "../services/api/axios";
-import { formatPrice } from "../utils/formatPrise";
 const AutoSlider = () => {
-  const [data, setData] = useState([]);
   const navigate = useNavigate();
-  useEffect(() => {
-    axiosT
-      .get("/admin/getAllCategory")
-      .then((res) => {
-        console.log(res.data.allCategory);
-        setData(res.data.allCategory);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
   return (
-    <div className="sm:p-24 p-8 pb-5">
+    <div className="px-24 py-10">
       <h1 className="text-#1F2937 text-[26px] sm:text-4xl sm:mb-12 mb-4 sm:font-semibold font-bold">
-        Bizdagi qurilish mahsulotlari to'plami
+        Bizning ko'p qavatli uylarimiz
       </h1>
       <Swiper
         spaceBetween={20}
@@ -53,32 +44,81 @@ const AutoSlider = () => {
         slidesPerView={1}
         className="mySwiper mt-5 sm:mt-0 rounded-2xl"
       >
-        {/* {data.map((item) => {
-          return (
-            <SwiperSlide
-              onClick={() => {
-                navigate(`/category/${item.id}`);
-              }}
-              key={item.id}
-            >
-              <div className="autoslider_wrap">
-                <div className="autoslider_img">
-                  <img
-                    className="w-[100%] rounded-2xl"
-                    src={item.categoryImage}
-                    alt=""
-                  />
-                </div>
-                <div className="autoslider_content">
-                  <h3>{item.categoryName}</h3>
-                  <div>
-                    <p>Mahsulotlar soni {item.productCount} ta</p>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          );
-        })} */}
+        <SwiperSlide
+          onClick={() => {
+            navigate(`/design`);
+          }}
+        >
+          <div className="autoslider_wrap">
+            <div className="autoslider_img">
+              <img
+                className="w-[100%] rounded-2xl"
+                src={t1}
+                alt=""
+              />
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide
+          onClick={() => {
+            navigate(`/design`);
+          }}
+        >
+          <div className="autoslider_wrap">
+            <div className="autoslider_img">
+              <img
+                className="w-[100%] rounded-2xl"
+                src={t2}
+                alt=""
+              />
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide
+          onClick={() => {
+            navigate(`/design`);
+          }}
+        >
+          <div className="autoslider_wrap">
+            <div className="autoslider_img">
+              <img
+                className="w-[100%] rounded-2xl"
+                src={t3}
+                alt=""
+              />
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide
+          onClick={() => {
+            navigate(`/design`);
+          }}
+        >
+          <div className="autoslider_wrap">
+            <div className="autoslider_img">
+              <img
+                className="w-[100%] rounded-2xl"
+                src={t4}
+                alt=""
+              />
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide
+          onClick={() => {
+            navigate(`/design`);
+          }}
+        >
+          <div className="autoslider_wrap">
+            <div className="autoslider_img">
+              <img
+                className="w-[100%] rounded-xl"
+                src={t5}
+                alt=""
+              />
+            </div>
+          </div>
+        </SwiperSlide>
       </Swiper>
     </div>
   );

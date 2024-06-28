@@ -97,7 +97,7 @@ const NewCategory = ({ title }) => {
                     />
                   </div>
                   <label htmlFor="file">
-                    Qurilish kategoriyasi rasmi <DriveFolderUploadOutlinedIcon className="icon" />
+                    Ko'p qavatli uyning rasmi <DriveFolderUploadOutlinedIcon className="icon" />
                   </label>
                   <input
                     type="file"

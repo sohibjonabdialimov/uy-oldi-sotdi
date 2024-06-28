@@ -204,7 +204,7 @@ const MainCategory = () => {
                       <>
                         <Input
                           {...field}
-                          placeholder="Alisher Qodirov"
+                          placeholder="Abdurahmonov Otabek"
                           className="w-full p-3 rounded-[10px]"
                         />
                       </>
@@ -225,7 +225,7 @@ const MainCategory = () => {
                         <Input
                           {...field}
                           type="number"
-                          placeholder="+998976367574"
+                          placeholder="+998977775576"
                           className="w-full p-3 rounded-[10px]"
                         />
                       </>

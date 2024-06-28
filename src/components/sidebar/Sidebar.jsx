@@ -49,7 +49,13 @@ const Sidebar = () => {
           <Link to="/admin/products" style={{ textDecoration: "none" }}>
             <li>
               <StoreIcon className="icon" />
-              <span>Qurilish mahsulotlari</span>
+              <span>Xonalar yaratish</span>
+            </li>
+          </Link>
+          <Link to="/admin/items" style={{ textDecoration: "none" }}>
+            <li>
+              <StoreIcon className="icon" />
+              <span>Uylar yaratish</span>
             </li>
           </Link>
           <Link to="/admin/all_orders" style={{ textDecoration: "none" }}>

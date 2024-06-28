@@ -254,63 +254,33 @@ const Footer = () => {
           </div>
           <div className="link-boxes">
             <ul className="box">
-              <li className="link_name">Company</li>
+              <li className="link_name">Sayt linklari</li>
               <li>
-                <a href="#">Home</a>
+                <Link to="/">Bosh sahifa</Link>
               </li>
               <li>
-                <a href="#">Contact us</a>
+                <Link to="/category">Kategoriya</Link>
               </li>
               <li>
-                <a href="#">About us</a>
-              </li>
-              <li>
-                <a href="#">Get started</a>
+                <Link to="/design">Namunalar</Link>
               </li>
             </ul>
             <ul className="box">
-              <li className="link_name">Services</li>
+              <li className="link_name">Foydalanuvchilar uchun</li>
               <li>
-                <a href="#">App design</a>
+                <Link to="/register">Ro'yxatdan o'tish</Link>
               </li>
               <li>
-                <a href="#">Web design</a>
-              </li>
-              <li>
-                <a href="#">Logo design</a>
-              </li>
-              <li>
-                <a href="#">Banner design</a>
+                <Link to="/login">Login</Link>
               </li>
             </ul>
             <ul className="box">
-              <li className="link_name">Account</li>
+              <li className="link_name">Bog'lanish uchun</li>
               <li>
-                <a href="#">Profile</a>
+                <a href="#">+998(97) 777-55-76</a>
               </li>
               <li>
-                <a href="#">My account</a>
-              </li>
-              <li>
-                <a href="#">Prefrences</a>
-              </li>
-              <li>
-                <a href="#">Purchase</a>
-              </li>
-            </ul>
-            <ul className="box">
-              <li className="link_name">Courses</li>
-              <li>
-                <a href="#">HTML & CSS</a>
-              </li>
-              <li>
-                <a href="#">JavaScript</a>
-              </li>
-              <li>
-                <a href="#">Photography</a>
-              </li>
-              <li>
-                <a href="#">Photoshop</a>
+                <a href="#">otabekabdurahmonov50@gmail.com</a>
               </li>
             </ul>
             <ul className="box input-box">

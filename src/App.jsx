@@ -21,6 +21,9 @@ import NewCategory from "./pages/newCategory/NewCategory";
 import CategoryList from "./pages/categoryList/CategoryList";
 import { authContext } from "./services/providers/authContext";
 import AdminOrder from "./pages/AdminOrder";
+import OnHome from "./pages/oneHome/OnHome";
+import NewChild from "./pages/newChild/NewChild";
+import ChildList from "./pages/childList/ChildList";
 
 function App() {
   const { auth } = useContext(authContext);
@@ -40,6 +43,7 @@ function App() {
             <Route path="feedback" element={<Feedback />} />
             <Route path="category" element={<MainCategory />} />
             <Route path="category/:id" element={<Furniture />} />
+            <Route path="home/:id" element={<OnHome />} />
           </Route>
           <Route path="/admin">
             <Route path="login" element={<LoginPage type="admin" />} />
@@ -136,6 +140,24 @@ function App() {
                 element={
                   <RequireAuth>
                     <NewCategory title="Yangi kategoriya qo'shish" />
+                  </RequireAuth>
+                }
+              />
+            </Route>
+            <Route path="items">
+              <Route
+                index
+                element={
+                  <RequireAuth>
+                    <ChildList />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="new"
+                element={
+                  <RequireAuth>
+                    <NewChild title="Yangi uy qo'shish" />
                   </RequireAuth>
                 }
               />

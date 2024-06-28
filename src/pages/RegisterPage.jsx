@@ -14,9 +14,9 @@ const RegisterPage = ({ type }) => {
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
+  console.log(type);
   const submitHandler = () => {
     const data = getValues().REGISTER;
-    console.log(type);
     if (type !== "admin") {
       axiosT
         .post("/user/signup", data)
@@ -107,7 +107,7 @@ const RegisterPage = ({ type }) => {
                       <>
                         <Input
                           {...field}
-                          placeholder="Alisher Qodirov"
+                          placeholder="Abdurahmonov Otabek"
                           className="w-full p-2 rounded-[10px]"
                         />
                       </>
@@ -128,7 +128,7 @@ const RegisterPage = ({ type }) => {
                         <Input
                           {...field}
                           type="number"
-                          placeholder="+998976367574"
+                          placeholder="+998977775576"
                           className="w-full p-2 rounded-[10px]"
                         />
                       </>
@@ -184,14 +184,25 @@ const RegisterPage = ({ type }) => {
               >
                 Ro'yxatdan o'tish
               </button>
-              <p className="mt-4 text-center text-sm text-gray-500">
-                <Link
-                  to={"/login"}
-                  className="font-semibold leading-6 text-custom_color hover:text-custom_color_hover"
-                >
-                  Akkauntingiz bormi?
-                </Link>
-              </p>
+              {type !== "admin" ? (
+                <p className="mt-4 text-center text-sm text-gray-500">
+                  <Link
+                    to={"/login"}
+                    className="font-semibold leading-6 text-custom_color hover:text-custom_color_hover"
+                  >
+                    Akkauntingiz bormi?
+                  </Link>
+                </p>
+              ) : (
+                <p className="mt-4 text-center text-sm text-gray-500">
+                  <Link
+                    to={"/"}
+                    className="font-semibold leading-6 text-custom_color hover:text-custom_color_hover"
+                  >
+                    Bosh sahifaga o'tish
+                  </Link>
+                </p>
+              )}
             </div>
           </Form>
         </div>

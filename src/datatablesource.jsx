@@ -82,3 +82,38 @@ export const Category = [
     width: 300,
   },
 ];
+export const Child = [
+  { field: "id", headerName: "ID", width: 325 },
+  {
+    field: "narxi",
+    headerName: "Uyning narxi",
+    width: 220,
+    renderCell: (params) => {
+      return (
+        <div key={params.row.id} className="cellWithImg">
+          <img
+            className="cellImg"
+            src={params.row.img}
+            alt="avatar"
+          />
+          {params.row.narxi}
+        </div>
+      );
+    },
+  },
+  {
+    field: "qavat",
+    headerName: "Uyning qavati",
+    width: 120,
+  },
+  {
+    field: "size",
+    headerName: "Uyning o'lchami",
+    width: 150,
+  },
+  {
+    field: "flatItem_id",
+    headerName: "Xona bo'yicha ID",
+    width: 340,
+  },
+];

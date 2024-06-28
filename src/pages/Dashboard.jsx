@@ -13,9 +13,10 @@ const Dashboard = () => {
       <div className="container text-black mx-auto">
         <CategorySlider />
         <div className="p-8">
-          <img src={ch2} alt="" />
+          <img src={ch2} alt="" className="rounded-2xl" />
         </div>
         <Information />
+        <AutoSlider />
         <Location />
       </div>
     </>

@@ -32,6 +32,10 @@ header#site-header a:hover {
   color: #0097ad !important;
   transition: all 0.2s ease;
 }
+header#site-header a.active {
+  color: #0097ad !important;
+  transition: all 0.2s ease;
+}
 
 header#site-header button:active {
   position: relative;
@@ -41,7 +45,7 @@ header#site-header button:active {
 header#site-header div#site-header-auth-container button {
   outline: 0;
   background: transparent;
-  height: 30px;
+  height: 19px;
   display: flex;
   gap: 10px;
   padding: 0 5px;
@@ -50,6 +54,22 @@ header#site-header div#site-header-auth-container button {
   font-size: 11pt;
   cursor: pointer;
   color: #666666;
+}
+.money {
+  margin: 15px 0;
+}
+.money button{
+  background-color: #0080A9FF;
+  padding: 5px 15px;
+  color: #fff;
+  border-radius: 10px;
+  transition: 0.3s all;
+}
+.money button:hover{
+  background-color: rgb(21, 150, 193);
+  padding: 5px 15px;
+  color: #fff;
+  border-radius: 10px;
 }
 
 header#site-header div#site-header-container {

@@ -70,6 +70,18 @@ const CategorySlider = () => {
   }, []);
   return (
     <div className="p-8 categorySlider mt-20">
+      <ToastContainer
+        position="top-right"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <h1 className="common_subtitle">Ommabop uylar</h1>
       <div className="mainbod">
         {data.map((item, index) => {
@@ -157,8 +169,13 @@ const CategorySlider = () => {
         })}
       </div>
       <div className="flex justify-center items-center mx-auto ">
-        <button onClick={() => {navigate("/category")}} class="relative inline-flex items-center text-lg justify-center p-0.5 mb-2 me-2 overflow-hidden font-medium text-custom_sub_color rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
-          <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+        <button
+          onClick={() => {
+            navigate("/category");
+          }}
+          className="relative inline-flex items-center text-lg justify-center p-0.5 mb-2 me-2 overflow-hidden font-medium text-custom_sub_color rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
+        >
+          <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
             Ko'proq ko'rish
           </span>
         </button>

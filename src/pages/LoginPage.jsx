@@ -22,7 +22,6 @@ const LoginPage = ({ type }) => {
       axiosT
         .post("/user/signin", data)
         .then((response) => {
-          console.log(response);
           localStorage.setItem("user_data", JSON.stringify(response.data.data));
           localStorage.setItem(
             "user_id",
@@ -97,7 +96,7 @@ const LoginPage = ({ type }) => {
                         <Input
                           {...field}
                           type="email"
-                          placeholder="user@gmail.com"
+                          placeholder="otabek@gmail.com"
                           className="w-full sm:p-5 p-2 rounded-[10px]"
                         />
                       </>
@@ -134,14 +133,25 @@ const LoginPage = ({ type }) => {
               </button>
             </div>
           </Form>
-          <p className="sm:mt-10 mt-0 text-center text-sm text-gray-500">
-            <Link
-              to={"/register"}
-              className="font-semibold leading-6 text-custom_color hover:text-custom_color_hover"
-            >
-              Akkauntingiz yo'qmi? Ro'yxatdan o'ting
-            </Link>
-          </p>
+          {type !== "admin" ? (
+            <p className="sm:mt-10 mt-0 text-center text-sm text-gray-500">
+              <Link
+                to={"/register"}
+                className="font-semibold leading-6 text-custom_color hover:text-custom_color_hover"
+              >
+                Akkauntingiz yo'qmi? Ro'yxatdan o'ting
+              </Link>
+            </p>
+          ) : (
+            <p className="sm:mt-10 mt-0 text-center text-sm text-gray-500">
+              <Link
+                to={"/"}
+                className="font-semibold leading-6 text-custom_color hover:text-custom_color_hover"
+              >
+                Bosh sahifaga o'tish
+              </Link>
+            </p>
+          )}
         </div>
       </div>
     </div>
@@ -149,4 +159,3 @@ const LoginPage = ({ type }) => {
 };
 
 export default LoginPage;
-

@@ -11,7 +11,7 @@ const Location = () => {
         </div>
         <div>
           <h2 className="font-bold text-xl">Ishonch telefoni:</h2>
-          <p>(+998 71) 252-20-65</p>
+          <p>(+998 97) 777-55-76</p>
         </div>
       </div>
       <div
