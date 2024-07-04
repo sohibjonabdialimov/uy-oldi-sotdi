@@ -224,7 +224,7 @@ const Footer = () => {
   </div>
 </footer> */}
       <footer>
-        <div className="content">
+        <div className="content ">
           <div className="top">
             <div className="logo-details">
               <img

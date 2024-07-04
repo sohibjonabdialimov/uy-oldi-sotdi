@@ -24,6 +24,7 @@ import AdminOrder from "./pages/AdminOrder";
 import OnHome from "./pages/oneHome/OnHome";
 import NewChild from "./pages/newChild/NewChild";
 import ChildList from "./pages/childList/ChildList";
+import PaymentCard from "./pages/PaymentCard";
 
 function App() {
   const { auth } = useContext(authContext);
@@ -41,6 +42,7 @@ function App() {
             <Route path="design" element={<Design />} />
             <Route path="contact" element={<Contact />} />
             <Route path="feedback" element={<Feedback />} />
+            <Route path="payment-card" element={<PaymentCard />} />
             <Route path="category" element={<MainCategory />} />
             <Route path="category/:id" element={<Furniture />} />
             <Route path="home/:id" element={<OnHome />} />

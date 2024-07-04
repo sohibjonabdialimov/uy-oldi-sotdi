@@ -1,18 +1,11 @@
-import React, { useContext, useRef, useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./header.css";
 import { moneyContext } from "../../services/providers/money";
 const Header = () => {
-  const hidden = useRef();
-  const [price, setPrice] = useState("UZS");
   const navigate = useNavigate();
-  const {money, setMoney} = useContext(moneyContext);
-  function openNavbarFunction() {
-    hidden.current?.classList.remove("hidden");
-  }
-  function closeNavbarFunction() {
-    hidden.current?.classList.add("hidden");
-  }
+  const { money, setMoney } = useContext(moneyContext);
+
   return (
     <>
       <header id="site-header">
@@ -29,7 +22,7 @@ const Header = () => {
               src="https://bcassetcdn.com/public/blog/wp-content/uploads/2023/07/28140224/Urban-City-Apartment-by-marcololstudio.png"
               alt=""
             />
-            <p>E-ko'chmas mulk</p>
+            <p>E-ko&apos;chmas mulk</p>
           </div>
 
           <input
@@ -58,6 +51,9 @@ const Header = () => {
                 </li>
                 <li className="main-menu-item">
                   <NavLink to={"/design"}>Namunalar</NavLink>
+                </li>
+                <li className="main-menu-item">
+                  <NavLink to={"/payment-card"}>To&apos;lov</NavLink>
                 </li>
               </ul>
             </nav>
@@ -180,7 +176,7 @@ const Header = () => {
                       src="https://img.icons8.com/ios-glyphs/18/666666/user--v1.png"
                     />
                   </i>
-                  <span>Ro'yxatdan o'tish</span>
+                  <span>Ro&apos;yxatdan o&apos;tish</span>
                 </button>
               </>
             )}

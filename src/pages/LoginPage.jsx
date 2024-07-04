@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import  { useContext } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { Form, Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
@@ -10,8 +10,6 @@ const LoginPage = ({ type }) => {
   const {
     control,
     getValues,
-    reset: BranchReset,
-    formState: { errors },
   } = useForm();
   const { setAuth } = useContext(authContext);
   const navigate = useNavigate();
